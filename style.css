@@ -1,0 +1,226 @@
+/*
+Theme Name: oscar's Gallery
+Author: Mauricio Villegas - Eduardo Chavez
+Description: plantilla desarrollada para galería fotográfica para nuestro camarada Oscar
+Version: 0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: oscarsgallery
+*/
+
+
+body, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    font-family: 'Source Sans Pro', sans-serif;
+    width:   100vw;
+    height:   80px;
+}
+
+.home #nav{
+    position: absolute;
+    top:     65vh;
+}
+.home #nav li a{
+    color:#7C7C7C;
+}
+
+.home .navbar-brand{
+    margin: 10px 0 !important;
+    width: 0px !important;
+}
+.nav-item{
+    list-style-type:none;
+    width: 120px;
+}
+.nav-item.active  span::before{
+    content: '• ';
+    display: inline;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.nav-item.active{
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    width:  80px !important;
+    height: 80px;
+    margin-top:    10px;
+    margin-bottom: 10px;
+    margin-right: 50px !important;
+    margin-left:  50px !important;
+    
+}
+
+/*section Wrapper*/
+#sectionWrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+    -webkit-transition: background 1000ms linear;
+    -ms-    transition: background 1000ms linear;
+            transition: background 1000ms linear;
+}
+
+.home #sectionWrapper{
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 1%, rgba(203,203,203,1) 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 1%,rgba(203,203,203,1) 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 1%,rgba(203,203,203,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cbcbcb',GradientType=0 ); /* IE6-9 */
+    
+}
+.about #sectionWrapper{
+    background: #CBCBCB;
+    
+}
+.gallery #sectionWrapper{
+    background: #5D5D5D;
+    
+}
+.galleryView #sectionWrapper{
+    background: #1E2020;
+    
+}
+.announcement #sectionWrapper{
+    background: #5D5D5D;
+    
+}
+.contact #sectionWrapper{
+    background: #CBCBCB;
+    
+}
+
+.slide{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    -webkit-transition: left 1s ease;
+    -moz-   transition: left 1s ease;
+    -o-     transition: left 1s ease;
+    -ms-    transition: left 1s ease;
+            transition: left 1s ease;
+}
+
+section.prev{
+    left: -101vw;
+    z-index: 1;
+}
+section.prev, section.next{
+    display: block;
+}
+section.current{
+    left: 0;
+    z-index: 10;
+}
+section.next{
+    left: 101vw;
+    z-index: 1;
+}
+
+#home{
+    position: absolute;
+}
+.logo{
+    position: absolute;
+}
+#startPage .logo{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vh;
+    height: 30vh;
+}
+
+
+
+
+
+/*------------
+        //footer//
+-------------*/
+footer{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100vw;
+    padding: 10px;
+}
+.contactInfo{
+    height: 30px;
+    width: auto;
+    line-height: 30px;
+}
+.socialMediaContainer{
+    float: right;
+    width: auto;
+    height: 30px;
+    margin-right: 20px;
+}
+/*social media icons*/
+.socialMedia{
+    width:  30px;
+    height: 30px;
+    margin-left: 3px;
+}
+
+
+/*------------
+
+    contents
+
+-------------*/
+
+
+section.slide .content{
+    height: 75vh;
+    max-width: 75vw;
+    margin: auto;
+}
+
+section#announcement .content{
+    height: 75vh;
+    max-width: 450px;
+    margin: auto;
+    color: #fff;
+}
+
+section#about .content{
+    height: 75vh;
+    max-width: 450px;
+    margin: auto;
+}
+
+section.slide .content{
+    
+}
+
+.h100{
+    height: 100vh;
+}
