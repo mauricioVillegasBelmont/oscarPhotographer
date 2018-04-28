@@ -3,6 +3,7 @@ showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
+    $("body").addClass('galleryView');
 }
 
 function showDivs(n) {
