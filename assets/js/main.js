@@ -6,6 +6,15 @@ window.mobilecheck = function () {
     return check;
 };
 
+$('.navbar.responsive a').on('click', function(){
+    if($(this).is('.dropdown-toggle')){
+       
+    }else{
+        $('.navbar-collapse').collapse('hide');
+    }
+});
+
+
 $('.share').click(function (event) {
     event.preventDefault();
     var page = window.location.origin+window.location.pathname;

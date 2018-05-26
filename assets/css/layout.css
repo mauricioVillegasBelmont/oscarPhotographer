@@ -1,3 +1,21 @@
+body{
+    overflow-x: hidden;
+}
+section{
+    background-color: #070707;
+}
+nav.not-responsive .navLogo{
+    height: 75px;
+    width: auto;
+}
+nav.responsive .navLogo{
+    height: 75px;
+    width: auto;
+}
+nav.responsive .nav-item{
+    text-align: center;
+}
+/*
 nav{
     min-height: 5vh;
     max-height: 100px;
@@ -11,6 +29,7 @@ nav .navLogo{
     margin: 0 1.5rem;
     padding: 0;
 }
+*/
 
 
 section {
@@ -26,11 +45,9 @@ section {
 
 #series  {
     min-height:100vh;
-    /*background-color: #673ab7;*/
 }
 #notice     {
     min-height:100vh;
-    background-color: #ff9800;
 }
 
 
@@ -41,4 +58,173 @@ section {
     display: flex;
     justify-content: center;
     align-items: top;
+}
+
+@media only screen and (min-width: 1200px) {
+    .responsive{
+        display:none;
+    }
+    #aboutme .cont{
+        min-height: calc(calc(100vh - 11rem) / 2);
+    }
+    #aboutme  img{
+        width: 90%;
+    }
+    #aboutme .about p{
+        text-align: left;
+        padding-right: 20%;
+    }
+    #aboutme .trajectory p{
+        text-align: left;
+        float: right;
+        padding-right: 15px;
+    }
+    #series .poster .description{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 100;
+    }
+    #series .poster .description h3{
+        color: #000;
+        margin: calc(20% - 1rem) auto;
+    }
+    #series .description p{
+        width: 75%;
+    }
+    #series .poster img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+    }
+    #series .aside img:nth-child(1){
+        height: 40%;
+        margin-bottom: 1rem;
+    }
+    #series .aside img:nth-child(2){
+        height: calc(60% - 1rem);
+    }
+    #notice .data{
+        height: 10vh;
+        bottom: 2.5rem;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 1200px){
+    .responsive{
+        display:none;
+    }
+    #aboutme .cont{
+        min-height: calc(calc(100vh - 11rem) / 2);
+    }
+    #aboutme  img{
+        width: 100%;
+    }
+    #aboutme .about p{
+        padding-right: 0;
+    }
+    #aboutme .trajectory p{
+        padding-right: 0;
+    }
+    #series .poster .description{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 100;
+    }
+    #series .poster .description h3{
+        color: #000;
+        margin: calc(20% - 1rem) auto;
+    }
+    #series .description p{
+        width: 75%;
+    }
+    #series .poster img{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+    }
+    #series .aside img:nth-child(1){
+        height: 40%;
+        margin-bottom: 1rem;
+    }
+    #series .aside img:nth-child(2){
+        height: calc(60% - 1rem);
+    }
+    #notice .data{
+        height: 10vh;
+        bottom: 2.5rem;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .not-responsive{
+        display:none;
+    }
+    footer{
+        display: none !important;
+    }
+    #aboutme .cont{
+        height: auto;
+        min-height: calc(calc(100vh - 11rem) / 2);
+    }
+    #aboutme  img{
+        width: 100%;
+    }
+    #aboutme .about p{
+        padding-right: 0;
+    }
+    #aboutme .trajectory p{
+        text-align: left;
+        padding-right: 0;
+    }
+    #series .poster{
+        height: auto;
+    }
+    #series .poster .description{
+        position: relative;
+        height: auto;
+        opacity: 1;
+        margin-bottom: 0.5rem;
+    }
+    #series .poster img{
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 35vh;
+    }
+    #series .poster .description h3{
+        color: #fff;
+        margin: 1rem auto;
+    }
+    #series .description p{
+        text-align: left;
+        margin: 0px auto 1rem auto;
+    }
+    #series .aside{
+        display: none;
+    }
+    #notice .data{
+        bottom: 0;
+        height: 13vh;
+    }
 }
