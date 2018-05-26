@@ -1,0 +1,171 @@
+$( document ).ready(function(){
+    var arr = [];
+    $('img.attachment-post-thumbnail').each(function(){
+        var h = $(this).prop('naturalHeight');
+        var w = $(this).prop('naturalWidth');
+        if(w < h){
+            console.log('1');
+            $(this).parent().parent('.frame').addClass('typeA');
+            arr.push(0);
+            arr.push();
+        }else if(w === h || w < (1.2 * h)){
+            $(this).parent().parent('.frame').addClass('typeB'); 
+            arr.push(1);
+        } else{
+            if(w > (2*h)){
+                $(this).parent().parent('.frame').addClass('typeD'); 
+                arr.push(3);
+            }else{
+                $(this).parent().parent('.frame').addClass('typeC'); 
+                arr.push(2);
+            }
+        }
+    });
+    setAgain(arr);
+});
+
+
+function setAgain(arr){
+    var elements = document.getElementsByClassName('frame');
+    var row = [];
+    var rowElement = '<div class="row  mh35"></div>';
+    var rowElementA = '<div class="row mh55"></div>';
+    var rowElementB = '<div class="row mh45"></div>';
+    for(var i = 0;i<= arr.length-1;i++){
+        if(arr[i] === 0 && arr[i+1] === 0 && arr[i+2] === 0){
+            console.log('aaa');
+            var cls = 'triple' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i+1].classList.add(cls.toString());
+            elements[i+2].classList.add(cls.toString());
+            elements[i].classList.add('col-md-4');
+            elements[i+1].classList.add('col-md-4');
+            elements[i+2].classList.add('col-md-4');
+            $(clasSelector).wrapAll(rowElementA);
+            i = i+2;
+        } else if(arr[i] === 1 && arr[i+1] === 1 && arr[i+2] === 1){
+            console.log('bbb');
+            var cls = 'triple' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i+1].classList.add(cls.toString());
+            elements[i+2].classList.add(cls.toString());
+            elements[i].classList.add('col-md-4');
+            elements[i+1].classList.add('col-md-4');
+            elements[i+2].classList.add('col-md-4');
+            $(clasSelector).wrapAll(rowElementB);
+            i = i+2;
+        } else if(arr[i] === arr[i+1] && arr[i+2] !== arr[i] && arr[i] !== 3){
+            var cls = 'pair' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i+1].classList.add(cls.toString());
+            elements[i].classList.add('col-md-6');
+            elements[i+1].classList.add('col-md-6');
+            if(arr[i] === 0){
+            console.log('aa');
+                $(clasSelector).wrapAll(rowElementA);
+                
+            }else{
+            console.log('bb');
+            console.log('cc');
+                $(clasSelector).wrapAll(rowElementB);
+                
+            }
+            //console.log('!d');
+            i = i+1;
+        } else if(arr[i] !== arr[i+1]  && arr[i] !== 3 && arr[i+1] !== 3 && arr[i+1] !== undefined){
+            var cls = 'doble' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i+1].classList.add(cls.toString());
+            if(arr[i] === 0){
+                $(clasSelector).wrapAll(rowElementA);
+                if(arr[i+1] === 1){
+                console.log('ab');
+                    elements[i].classList.add('col-md-4');
+                    elements[i+1].classList.add('col-md-8');
+                }else{
+                console.log('ac');
+                    elements[i].classList.add('col-md-3');
+                    elements[i+1].classList.add('col-md-9');
+                }
+            }else if(arr[i] === 1){
+                $(clasSelector).wrapAll(rowElementB);
+                if(arr[i+1] === 0){
+                console.log('ba');
+                    elements[i].classList.add('col-md-8');
+                    elements[i+1].classList.add('col-md-4');
+                }else{
+                console.log('bc');
+                    elements[i].classList.add('col-md-5');
+                    elements[i+1].classList.add('col-md-7');
+                }
+            }else if(arr[i] === 2){
+                $(clasSelector).wrapAll(rowElementB);
+                if(arr[i+1] === 0){
+                console.log('ca');
+                    elements[i].classList.add('col-md-9');
+                    elements[i+1].classList.add('col-md-3');
+                }else{
+                console.log('cb');
+                    elements[i].classList.add('col-md-7');
+                    elements[i+1].classList.add('col-md-5');
+                }
+            }
+            //console.log('!alone element');
+            //console.log('!d');
+            i = i+1;
+        } else if(arr[i] !== 3  && arr[i+1] === 3){
+            var cls = 'dobleD' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i+1].classList.add(cls.toString());
+            if(arr[i] === 0){
+            console.log('ad');
+            $(clasSelector).wrapAll(rowElementA);
+                elements[i].classList.add('col-md-3');
+                elements[i+1].classList.add('col-md-9');
+            }else if(arr[i] === 1){
+            console.log('bd');
+                $(clasSelector).wrapAll(rowElementB);
+                elements[i].classList.add('col-md-4');
+                elements[i+1].classList.add('col-md-8');
+            }else if(arr[i] === 2){
+            console.log('cd');
+                $(clasSelector).wrapAll(rowElementB);
+                elements[i].classList.add('col-md-5');
+                elements[i+1].classList.add('col-md-7');
+            }
+            i = i+1;
+        }  else if(arr[i] === 3){
+            console.log('d');
+            var cls = 'large' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i].classList.add('col-md-12');
+            $(clasSelector).wrapAll(rowElementB);
+        } else if(arr[i + 1] === undefined){
+            console.log(arr[i] + ' alone');
+            var cls = 'alonE' + i;
+            var clasSelector  = '.'+ cls.toString();
+            elements[i].classList.add(cls.toString());
+            elements[i].classList.add(cls.toString());
+            if(arr[i] === 0){
+                elements[i].classList.add('col-md-4');
+                $(clasSelector).wrapAll(rowElementA);
+            }else if(arr[i] === 1){
+                elements[i].classList.add('col-md-6');
+                $(clasSelector).wrapAll(rowElementB);
+            }else if(arr[i] === 2){
+                elements[i].classList.add('col-md-8');
+                $(clasSelector).wrapAll(rowElementB);
+            }
+        }
+    }
+}
+
+
+
+

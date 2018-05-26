@@ -3,29 +3,134 @@ body, html{
     margin: 0;
     box-sizing: border-box;
 }
-
+/* 
+    nav
+*/
 nav{
     position: fixed;
     top: 0;
-    height: 50px;
-    background-color: cornflowerblue;
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
     -moz-   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
             box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
 }
 
-#main{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: aqua;    
+a{
+    color: #2abceb;
+}
+a:hover{
+    color: #EE2426;
+}
+.navbar .nav-link{
+    color: #fff;
+    font-weight:normal;
+}
+.navbar .nav-link:focus, .navbar .nav-link:hover{
+    color: #fff;
+    font-weight:normal;
+}
+.navbar .nav-link.active{
+    color: #EE2426;
+    font-weight: bold;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 
+.dropdown-menu{
+    margin-top: -5px;
+    background-color: #343a40!important;
+}
+.dropdown-item{
+    color: #fff!important;
+}
+.dropdown-item:hover{
+    color: #007bff!important;
+    background-color: #343a40!important;
+}
+.dropdown-item:focus{
+    color: #fff;
+    background-color: transparent;
+}
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #EE2426;
+    font-weight: bold;
+
+}
+.dropdown-item.serie:before{
+    content: '- ';
+}
+
+@media only screen and (min-width: 575px) {
+    .responsive{
+        display:none;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .not-responsive{
+        display:none;
+    }
+}
+
+/*
+    cuerpo de texto
+*/
+
+/*
+    lightbox
+*/
+#lightbox{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+#lightbox span{
+    position: absolute;
+    top:   0;
+    right: 1rem;
+    color: #fff;
+    font-size: 3rem;
+}
+
+/*@media only screen and (max-width: 575px) {
+    #lightbox{
+        width: 100vh;
+        height: 100vw;
+        transform:rotate(90deg);
+    }
+}*/
 
 /*social media icons*/
 a img.social-media{
     width: 40px;
     height: 40px;
     margin-left: 5px;
+    background-color: #000730
+}
+
+
+/*
+    footer
+*/
+
+footer{
+    height: 2.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    line-height: 1.2rem;
+    text-align: center;
+    font-size: 1.12rem;
+}
+footer .nav-item{
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
