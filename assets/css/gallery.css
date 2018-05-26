@@ -1,0 +1,54 @@
+section#galleries{
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0vh 1vw;
+    margin: 0 auto;
+}
+#galleries .row{
+    margin-top: 10px;
+}
+
+#galleries .frame{
+    position: relative;
+    margin: 10px 0px;
+}
+.mh55 .frame{
+    height: 55vh;
+}
+.mh45 .frame{
+    height: 45vh;
+}
+.mh35 .frame{
+    height: 35vh;
+}
+.frame img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+
+/*nueva galeria */
+#galleries .poster{
+    height: 70vh;
+    width: 100%;
+}
+
+#galleries .content-thumbnail{
+    box-sizing: border-box;
+    width: calc(calc(100% / 3) - 15px);
+    height: 20%;
+    margin: 10px 5px;
+    
+}
+
+#galleries .galleryTitle{
+    width: 100%;
+    height: 10%;
+}
+#galleries .description{
+    width: 100%;
+    height: 50%;
+}
